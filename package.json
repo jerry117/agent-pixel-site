@@ -1,0 +1,62 @@
+{
+  "name": "@jerry117/agent-pixel-site",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Agent 像素工地：在 DSH 输入框上方，用像素小工人呈现当前会话的 Agent、子代理和任务状态。",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "render-check.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node render-check.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerry117/agent-pixel-site.git"
+  },
+  "homepage": "https://github.com/jerry117/agent-pixel-site#readme",
+  "bugs": {
+    "url": "https://github.com/jerry117/agent-pixel-site/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "pixel-art",
+    "agents"
+  ]
+}

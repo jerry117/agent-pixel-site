@@ -1,0 +1,4 @@
+- insert:
+    - id: agent-pixel-site
+      name: '@jerry117/agent-pixel-site'
+      config: {}
